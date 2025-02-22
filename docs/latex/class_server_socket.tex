@@ -1,0 +1,199 @@
+\doxysection{Server\+Socket Class Reference}
+\hypertarget{class_server_socket}{}\label{class_server_socket}\index{ServerSocket@{ServerSocket}}
+
+
+{\ttfamily \#include $<$ccsocket.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_server_socket_a2b3098589541243241ca25495155186c}{Server\+Socket}} ()
+\begin{DoxyCompactList}\small\item\em Creates a listening socket that waits for connection requests by TCP/\+IP clients. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_server_socket_a510674d924c2544e6b0069e39c36516b}{\texorpdfstring{$\sim$}{\string~}\+Server\+Socket}} ()
+\item 
+\mbox{\hyperlink{class_socket}{Socket}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_server_socket_accc3d56d42aa50a5f3c920cf0b26959b}{accept}} ()
+\item 
+int \mbox{\hyperlink{class_server_socket_ad5281fe6c005bca007a9a758bd612481}{bind}} (int port, int backlog=50)
+\item 
+int \mbox{\hyperlink{class_server_socket_a3eac6d5571bb092622d328dbda2de2cf}{close}} ()
+\begin{DoxyCompactList}\small\item\em Closes the socket. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_server_socket_aa1c00353c8f50697c8a4a8882e520286}{is\+Closed}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the socket was closed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}} \mbox{\hyperlink{class_server_socket_a42fb2ded476612b5f23c46abb74db9c2}{descriptor}} ()
+\begin{DoxyCompactList}\small\item\em Returns the descriptor of the socket. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_server_socket_ab34154bc6114c638ae02f5e018121099}{set\+Receive\+Buffer\+Size}} (int size)
+\begin{DoxyCompactList}\small\item\em Sets the SO\+\_\+\+RCVBUF option to the specified value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_server_socket_ae60d7cc31ad535e5d3cac42e38b8ec98}{set\+Reuse\+Address}} (bool)
+\begin{DoxyCompactList}\small\item\em Enables/disables the SO\+\_\+\+REUSEADDR socket option. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_server_socket_aedb9144c9c375fcb14ac47bcb9d2eb17}{set\+So\+Timeout}} (int timeout)
+\begin{DoxyCompactList}\small\item\em Enables/disables SO\+\_\+\+TIMEOUT with the specified timeout (in milliseconds). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_server_socket_a9e5e1ee852ba26156c757a0086b780fe}{set\+Tcp\+No\+Delay}} (bool)
+\begin{DoxyCompactList}\small\item\em Turns on/off TCP coalescence (useful in some cases to avoid delays). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket}{Socket}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_server_socket_a1e7360bc0ce72128c5439f0d245d0793}{create\+Socket}} (\mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}})
+\item 
+\mbox{\hyperlink{class_server_socket_a4ba3346c88fb74117c7b0d4d0e3e4005}{Server\+Socket}} (const \mbox{\hyperlink{class_server_socket}{Server\+Socket}} \&)=delete
+\item 
+\mbox{\hyperlink{class_server_socket}{Server\+Socket}} \& \mbox{\hyperlink{class_server_socket_a491761ffc35fccab8cb348a2286928dd}{operator=}} (const \mbox{\hyperlink{class_server_socket}{Server\+Socket}} \&)=delete
+\item 
+\mbox{\hyperlink{class_server_socket}{Server\+Socket}} \& \mbox{\hyperlink{class_server_socket_a900d8868c7f1368837fe3c2db99afd91}{operator=}} (\mbox{\hyperlink{class_server_socket}{Server\+Socket}} \&\&)=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}} \mbox{\hyperlink{class_server_socket_ac83ceafd3f8f2242c68e398901be12bd}{sockfd\+\_\+}} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+TCP/\+IP IPv4 server socket. Waits for requests to come in over the network. TCP/\+IP sockets do not preserve record boundaries but \doxylink{class_socket_buffer}{Socket\+Buffer} solves this problem. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_server_socket_a2b3098589541243241ca25495155186c}\index{ServerSocket@{ServerSocket}!ServerSocket@{ServerSocket}}
+\index{ServerSocket@{ServerSocket}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{ServerSocket()}{ServerSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_server_socket_a2b3098589541243241ca25495155186c} 
+Server\+Socket\+::\+Server\+Socket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates a listening socket that waits for connection requests by TCP/\+IP clients. 
+
+\Hypertarget{class_server_socket_a510674d924c2544e6b0069e39c36516b}\index{ServerSocket@{ServerSocket}!````~ServerSocket@{\texorpdfstring{$\sim$}{\string~}ServerSocket}}
+\index{````~ServerSocket@{\texorpdfstring{$\sim$}{\string~}ServerSocket}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ServerSocket()}{\string~ServerSocket()}}
+{\footnotesize\ttfamily \label{class_server_socket_a510674d924c2544e6b0069e39c36516b} 
+Server\+Socket\+::\texorpdfstring{$\sim$}{\string~}\+Server\+Socket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_server_socket_a4ba3346c88fb74117c7b0d4d0e3e4005}\index{ServerSocket@{ServerSocket}!ServerSocket@{ServerSocket}}
+\index{ServerSocket@{ServerSocket}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{ServerSocket()}{ServerSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_server_socket_a4ba3346c88fb74117c7b0d4d0e3e4005} 
+Server\+Socket\+::\+Server\+Socket (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_server_socket}{Server\+Socket}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_server_socket_accc3d56d42aa50a5f3c920cf0b26959b}\index{ServerSocket@{ServerSocket}!accept@{accept}}
+\index{accept@{accept}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily \label{class_server_socket_accc3d56d42aa50a5f3c920cf0b26959b} 
+\mbox{\hyperlink{class_socket}{Socket}} \texorpdfstring{$\ast$}{*} Server\+Socket\+::accept (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Accepts a new connection request and returns a socket for exchanging data with this client. This function blocks until there is a connection request. \begin{DoxyReturn}{Returns}
+the new \doxylink{class_socket}{Socket} or nullptr on error. 
+\end{DoxyReturn}
+\Hypertarget{class_server_socket_ad5281fe6c005bca007a9a758bd612481}\index{ServerSocket@{ServerSocket}!bind@{bind}}
+\index{bind@{bind}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily \label{class_server_socket_ad5281fe6c005bca007a9a758bd612481} 
+int Server\+Socket\+::bind (\begin{DoxyParamCaption}\item[{int}]{port}{, }\item[{int}]{backlog}{ = {\ttfamily 50}}\end{DoxyParamCaption})}
+
+Assigns the server socket to localhost. \begin{DoxyReturn}{Returns}
+0 on success or a negative value on error, see \doxylink{class_socket_a9f68308228badcdd299cd83e62e36976}{Socket\+::\+Errors} 
+\end{DoxyReturn}
+\Hypertarget{class_server_socket_a3eac6d5571bb092622d328dbda2de2cf}\index{ServerSocket@{ServerSocket}!close@{close}}
+\index{close@{close}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \label{class_server_socket_a3eac6d5571bb092622d328dbda2de2cf} 
+int Server\+Socket\+::close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Closes the socket. 
+
+\Hypertarget{class_server_socket_a1e7360bc0ce72128c5439f0d245d0793}\index{ServerSocket@{ServerSocket}!createSocket@{createSocket}}
+\index{createSocket@{createSocket}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{createSocket()}{createSocket()}}
+{\footnotesize\ttfamily \label{class_server_socket_a1e7360bc0ce72128c5439f0d245d0793} 
+\mbox{\hyperlink{class_socket}{Socket}} \texorpdfstring{$\ast$}{*} Server\+Socket\+::create\+Socket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}}}]{sockfd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_socket_a42fb2ded476612b5f23c46abb74db9c2}\index{ServerSocket@{ServerSocket}!descriptor@{descriptor}}
+\index{descriptor@{descriptor}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{descriptor()}{descriptor()}}
+{\footnotesize\ttfamily \label{class_server_socket_a42fb2ded476612b5f23c46abb74db9c2} 
+\mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}} Server\+Socket\+::descriptor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the descriptor of the socket. 
+
+\Hypertarget{class_server_socket_aa1c00353c8f50697c8a4a8882e520286}\index{ServerSocket@{ServerSocket}!isClosed@{isClosed}}
+\index{isClosed@{isClosed}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{isClosed()}{isClosed()}}
+{\footnotesize\ttfamily \label{class_server_socket_aa1c00353c8f50697c8a4a8882e520286} 
+bool Server\+Socket\+::is\+Closed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if the socket was closed. 
+
+\Hypertarget{class_server_socket_a491761ffc35fccab8cb348a2286928dd}\index{ServerSocket@{ServerSocket}!operator=@{operator=}}
+\index{operator=@{operator=}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_server_socket_a491761ffc35fccab8cb348a2286928dd} 
+\mbox{\hyperlink{class_server_socket}{Server\+Socket}} \& Server\+Socket\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_server_socket}{Server\+Socket}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\Hypertarget{class_server_socket_a900d8868c7f1368837fe3c2db99afd91}\index{ServerSocket@{ServerSocket}!operator=@{operator=}}
+\index{operator=@{operator=}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_server_socket_a900d8868c7f1368837fe3c2db99afd91} 
+\mbox{\hyperlink{class_server_socket}{Server\+Socket}} \& Server\+Socket\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_server_socket}{Server\+Socket}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\Hypertarget{class_server_socket_ab34154bc6114c638ae02f5e018121099}\index{ServerSocket@{ServerSocket}!setReceiveBufferSize@{setReceiveBufferSize}}
+\index{setReceiveBufferSize@{setReceiveBufferSize}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{setReceiveBufferSize()}{setReceiveBufferSize()}}
+{\footnotesize\ttfamily \label{class_server_socket_ab34154bc6114c638ae02f5e018121099} 
+int Server\+Socket\+::set\+Receive\+Buffer\+Size (\begin{DoxyParamCaption}\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Sets the SO\+\_\+\+RCVBUF option to the specified value. 
+
+\Hypertarget{class_server_socket_ae60d7cc31ad535e5d3cac42e38b8ec98}\index{ServerSocket@{ServerSocket}!setReuseAddress@{setReuseAddress}}
+\index{setReuseAddress@{setReuseAddress}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{setReuseAddress()}{setReuseAddress()}}
+{\footnotesize\ttfamily \label{class_server_socket_ae60d7cc31ad535e5d3cac42e38b8ec98} 
+int Server\+Socket\+::set\+Reuse\+Address (\begin{DoxyParamCaption}\item[{bool}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Enables/disables the SO\+\_\+\+REUSEADDR socket option. 
+
+\Hypertarget{class_server_socket_aedb9144c9c375fcb14ac47bcb9d2eb17}\index{ServerSocket@{ServerSocket}!setSoTimeout@{setSoTimeout}}
+\index{setSoTimeout@{setSoTimeout}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{setSoTimeout()}{setSoTimeout()}}
+{\footnotesize\ttfamily \label{class_server_socket_aedb9144c9c375fcb14ac47bcb9d2eb17} 
+int Server\+Socket\+::set\+So\+Timeout (\begin{DoxyParamCaption}\item[{int}]{timeout}{}\end{DoxyParamCaption})}
+
+
+
+Enables/disables SO\+\_\+\+TIMEOUT with the specified timeout (in milliseconds). 
+
+\Hypertarget{class_server_socket_a9e5e1ee852ba26156c757a0086b780fe}\index{ServerSocket@{ServerSocket}!setTcpNoDelay@{setTcpNoDelay}}
+\index{setTcpNoDelay@{setTcpNoDelay}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{setTcpNoDelay()}{setTcpNoDelay()}}
+{\footnotesize\ttfamily \label{class_server_socket_a9e5e1ee852ba26156c757a0086b780fe} 
+int Server\+Socket\+::set\+Tcp\+No\+Delay (\begin{DoxyParamCaption}\item[{bool}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Turns on/off TCP coalescence (useful in some cases to avoid delays). 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_server_socket_ac83ceafd3f8f2242c68e398901be12bd}\index{ServerSocket@{ServerSocket}!sockfd\_@{sockfd\_}}
+\index{sockfd\_@{sockfd\_}!ServerSocket@{ServerSocket}}
+\doxysubsubsection{\texorpdfstring{sockfd\_}{sockfd\_}}
+{\footnotesize\ttfamily \label{class_server_socket_ac83ceafd3f8f2242c68e398901be12bd} 
+\mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}} Server\+Socket\+::sockfd\+\_\+ \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cpp/\mbox{\hyperlink{ccsocket_8h}{ccsocket.\+h}}\item 
+cpp/\mbox{\hyperlink{ccsocket_8cpp}{ccsocket.\+cpp}}\end{DoxyCompactItemize}

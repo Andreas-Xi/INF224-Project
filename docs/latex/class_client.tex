@@ -1,0 +1,84 @@
+\doxysection{Client Class Reference}
+\hypertarget{class_client}{}\label{class_client}\index{Client@{Client}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_client_a163113b9c3fda23dcdc750db9278afbe}{Client}} (String host, int port)  throws Unknown\+Host\+Exception, IOException 
+\item 
+String \mbox{\hyperlink{class_client_ab26831c395da92b5893066f9ce7963a4}{send}} (String request)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_client_ac9fec818083d641b633a8e4a75d981a7}{main}} (String argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket}{Socket}} \mbox{\hyperlink{class_client_ada8883642b4e572e515d7965d2ae60f2}{sock}}
+\item 
+Buffered\+Reader \mbox{\hyperlink{class_client_a2444414fd925ffa72107d443d968c6f7}{input}}
+\item 
+Buffered\+Writer \mbox{\hyperlink{class_client_a887c058363e5433882a9c2532196b7e3}{output}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final long \mbox{\hyperlink{class_client_a726d54cbc7e555b2cba9cb7fb63ed6b4}{serial\+Version\+UID}} = 1L
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_client_a163113b9c3fda23dcdc750db9278afbe}\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}}
+{\footnotesize\ttfamily \label{class_client_a163113b9c3fda23dcdc750db9278afbe} 
+Client.\+Client (\begin{DoxyParamCaption}\item[{String}]{host}{, }\item[{int}]{port}{}\end{DoxyParamCaption}) throws Unknown\+Host\+Exception, IOException\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initialise la connexion. Renvoie une exception en cas d\textquotesingle{}erreur. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_client_ac9fec818083d641b633a8e4a75d981a7}\index{Client@{Client}!main@{main}}
+\index{main@{main}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{class_client_ac9fec818083d641b633a8e4a75d981a7} 
+static void Client.\+main (\begin{DoxyParamCaption}\item[{String}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Lit une requete depuis le Terminal, envoie cette requete au serveur, recupere sa reponse et l\textquotesingle{}affiche sur le Terminal. Noter que le programme bloque si le serveur ne repond pas. \Hypertarget{class_client_ab26831c395da92b5893066f9ce7963a4}\index{Client@{Client}!send@{send}}
+\index{send@{send}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily \label{class_client_ab26831c395da92b5893066f9ce7963a4} 
+String Client.\+send (\begin{DoxyParamCaption}\item[{String}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Envoie une requete au server et retourne sa reponse. Noter que la methode bloque si le serveur ne repond pas. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_client_a2444414fd925ffa72107d443d968c6f7}\index{Client@{Client}!input@{input}}
+\index{input@{input}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily \label{class_client_a2444414fd925ffa72107d443d968c6f7} 
+Buffered\+Reader Client.\+input\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_client_a887c058363e5433882a9c2532196b7e3}\index{Client@{Client}!output@{output}}
+\index{output@{output}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{output}{output}}
+{\footnotesize\ttfamily \label{class_client_a887c058363e5433882a9c2532196b7e3} 
+Buffered\+Writer Client.\+output\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_client_a726d54cbc7e555b2cba9cb7fb63ed6b4}\index{Client@{Client}!serialVersionUID@{serialVersionUID}}
+\index{serialVersionUID@{serialVersionUID}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{serialVersionUID}{serialVersionUID}}
+{\footnotesize\ttfamily \label{class_client_a726d54cbc7e555b2cba9cb7fb63ed6b4} 
+final long Client.\+serial\+Version\+UID = 1L\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_client_ada8883642b4e572e515d7965d2ae60f2}\index{Client@{Client}!sock@{sock}}
+\index{sock@{sock}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{sock}{sock}}
+{\footnotesize\ttfamily \label{class_client_ada8883642b4e572e515d7965d2ae60f2} 
+\mbox{\hyperlink{class_socket}{Socket}} Client.\+sock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+swing/\mbox{\hyperlink{_client_8java}{Client.\+java}}\end{DoxyCompactItemize}

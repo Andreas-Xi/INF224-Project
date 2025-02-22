@@ -1,0 +1,219 @@
+\doxysection{photo Class Reference}
+\hypertarget{classphoto}{}\label{classphoto}\index{photo@{photo}}
+
+
+A class representing a photo, derived from the multimedia class.  
+
+
+
+
+{\ttfamily \#include $<$photo.\+h$>$}
+
+Inheritance diagram for photo\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classphoto}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classphoto_a8d8301a2d193cb37de92df5afb679be1}{photo}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the photo class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classphoto_a9f61d7c2e37e4b9dac8cd6e6d6d24c14}{photo}} (const std\+::string \&\mbox{\hyperlink{classmultimedia_a064ebea9f2b1db5e7e1f1502a6a49393}{name}}, const std\+::string \&\mbox{\hyperlink{classmultimedia_a95ef6142b5072a95b30198ed5d98d1d6}{filename}}, double \mbox{\hyperlink{classphoto_a398e3b66094adde1d2ea83c0af68feec}{latitude}}, double \mbox{\hyperlink{classphoto_af163e29ef5fccffd7c76656af26d551b}{longitude}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for the photo class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classphoto_a0128bf8f5da69dbe7395f5b724d797c9}{display}} (std\+::ostream \&os) const override
+\begin{DoxyCompactList}\small\item\em Display the information of the photo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classphoto_a1180abcd105fae831b738fcbb32b3539}{play}} () const override
+\begin{DoxyCompactList}\small\item\em Play the photo using an external application (e.\+g., ImageJ). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classphoto_a70a80096b38924aafb2eec3fb91d37a7}{get\+\_\+longitude}} () const
+\begin{DoxyCompactList}\small\item\em Get the longitude of the photo\textquotesingle{}s location. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classphoto_a2a8f7c41946f0c44a5c64304bc7cb870}{get\+\_\+latitude}} () const
+\begin{DoxyCompactList}\small\item\em Get the latitude of the photo\textquotesingle{}s location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classphoto_a6548c02633dfa6f375a7a3d169d9f795}{set\+\_\+longitude}} (double \mbox{\hyperlink{classphoto_af163e29ef5fccffd7c76656af26d551b}{longitude}})
+\begin{DoxyCompactList}\small\item\em Set the longitude of the photo\textquotesingle{}s location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classphoto_a03e451c7c5dd82ad64966ef809199ee4}{set\+\_\+latitude}} (double \mbox{\hyperlink{classphoto_a398e3b66094adde1d2ea83c0af68feec}{latitude}})
+\begin{DoxyCompactList}\small\item\em Set the latitude of the photo\textquotesingle{}s location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmultimedia}{multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmultimedia_ab45bf5f2ddbf38e3617a6f4ddba74b50}{multimedia}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the multimedia class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmultimedia_aebe4c9d9aba4fadb2830b6243a41dd3f}{multimedia}} (const std\+::string \&\mbox{\hyperlink{classmultimedia_a064ebea9f2b1db5e7e1f1502a6a49393}{name}}, const std\+::string \&\mbox{\hyperlink{classmultimedia_a95ef6142b5072a95b30198ed5d98d1d6}{filename}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for the multimedia class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmultimedia_ad51bf2f97dd0b0933d084204679efa90}{\texorpdfstring{$\sim$}{\string~}multimedia}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the multimedia class. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classmultimedia_a72dd9daf7e3e78cc59e605d098650453}{get\+\_\+name}} () const
+\begin{DoxyCompactList}\small\item\em Get the name of the multimedia object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classmultimedia_aa03be148708134b3719d5cd6275fb4b5}{get\+\_\+filename}} () const
+\begin{DoxyCompactList}\small\item\em Get the filename of the multimedia object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmultimedia_a83ce3d80f50c033e3b70e5894af5fa68}{set\+\_\+name}} (const std\+::string \&\mbox{\hyperlink{classmultimedia_a064ebea9f2b1db5e7e1f1502a6a49393}{name}})
+\begin{DoxyCompactList}\small\item\em Set the name of the multimedia object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmultimedia_a3b14c198ec075a6ad369875586264b21}{set\+\_\+filename}} (const std\+::string \&\mbox{\hyperlink{classmultimedia_a95ef6142b5072a95b30198ed5d98d1d6}{filename}})
+\begin{DoxyCompactList}\small\item\em Set the filename of the multimedia object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classphoto_af163e29ef5fccffd7c76656af26d551b}{longitude}} \{\}
+\begin{DoxyCompactList}\small\item\em The longitude of the photo\textquotesingle{}s location. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classphoto_a398e3b66094adde1d2ea83c0af68feec}{latitude}} \{\}
+\begin{DoxyCompactList}\small\item\em The latitude of the photo\textquotesingle{}s location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a photo, derived from the multimedia class. 
+
+This class extends the multimedia class to include geographical coordinates (latitude and longitude) for the photo. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classphoto_a8d8301a2d193cb37de92df5afb679be1}\index{photo@{photo}!photo@{photo}}
+\index{photo@{photo}!photo@{photo}}
+\doxysubsubsection{\texorpdfstring{photo()}{photo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classphoto_a8d8301a2d193cb37de92df5afb679be1} 
+photo\+::photo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for the photo class. 
+
+\Hypertarget{classphoto_a9f61d7c2e37e4b9dac8cd6e6d6d24c14}\index{photo@{photo}!photo@{photo}}
+\index{photo@{photo}!photo@{photo}}
+\doxysubsubsection{\texorpdfstring{photo()}{photo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classphoto_a9f61d7c2e37e4b9dac8cd6e6d6d24c14} 
+photo\+::photo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{filename}{, }\item[{double}]{latitude}{, }\item[{double}]{longitude}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Parameterized constructor for the photo class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the photo. \\
+\hline
+{\em filename} & The filename of the photo. \\
+\hline
+{\em latitude} & The latitude of the photo\textquotesingle{}s location. \\
+\hline
+{\em longitude} & The longitude of the photo\textquotesingle{}s location. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classphoto_a0128bf8f5da69dbe7395f5b724d797c9}\index{photo@{photo}!display@{display}}
+\index{display@{display}!photo@{photo}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily \label{classphoto_a0128bf8f5da69dbe7395f5b724d797c9} 
+void photo\+::display (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Display the information of the photo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream to which the information is written. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classmultimedia_a2baec516df6dbb07221e53a76b414289}{multimedia}}.
+
+\Hypertarget{classphoto_a2a8f7c41946f0c44a5c64304bc7cb870}\index{photo@{photo}!get\_latitude@{get\_latitude}}
+\index{get\_latitude@{get\_latitude}!photo@{photo}}
+\doxysubsubsection{\texorpdfstring{get\_latitude()}{get\_latitude()}}
+{\footnotesize\ttfamily \label{classphoto_a2a8f7c41946f0c44a5c64304bc7cb870} 
+double photo\+::get\+\_\+latitude (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the latitude of the photo\textquotesingle{}s location. 
+
+\begin{DoxyReturn}{Returns}
+The latitude as a double. 
+\end{DoxyReturn}
+\Hypertarget{classphoto_a70a80096b38924aafb2eec3fb91d37a7}\index{photo@{photo}!get\_longitude@{get\_longitude}}
+\index{get\_longitude@{get\_longitude}!photo@{photo}}
+\doxysubsubsection{\texorpdfstring{get\_longitude()}{get\_longitude()}}
+{\footnotesize\ttfamily \label{classphoto_a70a80096b38924aafb2eec3fb91d37a7} 
+double photo\+::get\+\_\+longitude (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the longitude of the photo\textquotesingle{}s location. 
+
+\begin{DoxyReturn}{Returns}
+The longitude as a double. 
+\end{DoxyReturn}
+\Hypertarget{classphoto_a1180abcd105fae831b738fcbb32b3539}\index{photo@{photo}!play@{play}}
+\index{play@{play}!photo@{photo}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily \label{classphoto_a1180abcd105fae831b738fcbb32b3539} 
+void photo\+::play (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Play the photo using an external application (e.\+g., ImageJ). 
+
+
+
+Implements \mbox{\hyperlink{classmultimedia_ac5109dd362e63dd9c1ee1517c487a5bd}{multimedia}}.
+
+\Hypertarget{classphoto_a03e451c7c5dd82ad64966ef809199ee4}\index{photo@{photo}!set\_latitude@{set\_latitude}}
+\index{set\_latitude@{set\_latitude}!photo@{photo}}
+\doxysubsubsection{\texorpdfstring{set\_latitude()}{set\_latitude()}}
+{\footnotesize\ttfamily \label{classphoto_a03e451c7c5dd82ad64966ef809199ee4} 
+void photo\+::set\+\_\+latitude (\begin{DoxyParamCaption}\item[{double}]{latitude}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the latitude of the photo\textquotesingle{}s location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em latitude} & The new latitude value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classphoto_a6548c02633dfa6f375a7a3d169d9f795}\index{photo@{photo}!set\_longitude@{set\_longitude}}
+\index{set\_longitude@{set\_longitude}!photo@{photo}}
+\doxysubsubsection{\texorpdfstring{set\_longitude()}{set\_longitude()}}
+{\footnotesize\ttfamily \label{classphoto_a6548c02633dfa6f375a7a3d169d9f795} 
+void photo\+::set\+\_\+longitude (\begin{DoxyParamCaption}\item[{double}]{longitude}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the longitude of the photo\textquotesingle{}s location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em longitude} & The new longitude value. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classphoto_a398e3b66094adde1d2ea83c0af68feec}\index{photo@{photo}!latitude@{latitude}}
+\index{latitude@{latitude}!photo@{photo}}
+\doxysubsubsection{\texorpdfstring{latitude}{latitude}}
+{\footnotesize\ttfamily \label{classphoto_a398e3b66094adde1d2ea83c0af68feec} 
+double photo\+::latitude \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The latitude of the photo\textquotesingle{}s location. 
+
+\Hypertarget{classphoto_af163e29ef5fccffd7c76656af26d551b}\index{photo@{photo}!longitude@{longitude}}
+\index{longitude@{longitude}!photo@{photo}}
+\doxysubsubsection{\texorpdfstring{longitude}{longitude}}
+{\footnotesize\ttfamily \label{classphoto_af163e29ef5fccffd7c76656af26d551b} 
+double photo\+::longitude \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The longitude of the photo\textquotesingle{}s location. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cpp/\mbox{\hyperlink{photo_8h}{photo.\+h}}\end{DoxyCompactItemize}

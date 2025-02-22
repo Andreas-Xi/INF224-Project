@@ -1,0 +1,211 @@
+\doxysection{ccsocket.\+h}
+\hypertarget{ccsocket_8h_source}{}\label{ccsocket_8h_source}\index{cpp/ccsocket.h@{cpp/ccsocket.h}}
+\mbox{\hyperlink{ccsocket_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ \ ccsocket:\ C++\ Classes\ for\ TCP/IP\ and\ UDP\ Datagram\ INET\ Sockets.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ \ (c)\ Eric\ Lecolinet\ 2016/2020\ -\/\ https://www.telecom-\/paris.fr/\string~elc}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ -\/\ Socket:\ TCP/IP\ or\ UDP/Datagram\ IPv4\ socket}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ -\/\ ServerSocket:\ TCP/IP\ Socket\ Server}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ -\/\ SocketBuffer:\ preserves\ record\ boundaries\ when\ exchanging\ data}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ \ \ between\ TCP/IP\ sockets.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ ccuty\_ccsocket}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ ccuty\_ccsocket\ 1}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#if\ defined(\_WIN32)\ ||\ defined(\_WIN64)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <winsock2.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ SOCKSIZE\ int}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ SOCKDATA\ char}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <sys/socket.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ SOCKET\ int}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ SOCKADDR\ struct\ sockaddr}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SOCKADDR\_IN\ struct\ sockaddr\_in}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ INVALID\_SOCKET\ -\/1}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ SOCKSIZE\ ssize\_t}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ SOCKDATA\ void}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ ignore\ SIGPIPES\ when\ possible}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#if\ defined(MSG\_NOSIGNAL)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#\ \ define\ NO\_SIGPIPE\_(flags)\ (flags\ |\ MSG\_NOSIGNAL)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#\ \ define\ NO\_SIGPIPE\_(flags)\ (flags)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_socket_acd3cb39bc957be2f34c91b9e262e1cec}{Socket}}\ \{}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_socket_a9f68308228badcdd299cd83e62e36976}{Errors}}\ \{\ \mbox{\hyperlink{class_socket_a9f68308228badcdd299cd83e62e36976a86c20a6b52053a1f39f5d31b28b9e7cb}{Failed}}\ =\ -\/1,\ \mbox{\hyperlink{class_socket_a9f68308228badcdd299cd83e62e36976ae3fcc87ee9b909ea92c751f70df4c9ac}{InvalidSocket}}\ =\ -\/2,\ \mbox{\hyperlink{class_socket_a9f68308228badcdd299cd83e62e36976ab8eb7f6e1d237e242921ef128c01491c}{UnknownHost}}\ =\ -\/3\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_socket_a1a662407744738aa56d1ccb6d7be26eb}{startup}}();}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_socket_a744a91706b9510d266b7c07e31f3e028}{cleanup}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{class_socket_acd3cb39bc957be2f34c91b9e262e1cec}{Socket}}(\textcolor{keywordtype}{int}\ type\ =\ SOCK\_STREAM);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{class_socket_acd3cb39bc957be2f34c91b9e262e1cec}{Socket}}(\textcolor{keywordtype}{int}\ type,\ \mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}}\ sockfd);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{class_socket_aeac4eb6379a543d38ed88977d3b6630a}{\string~Socket}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_a772419bd74c4fe4987d190506a64ff87}{connect}}(\textcolor{keyword}{const}\ std::string\&\ host,\ \textcolor{keywordtype}{int}\ port);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_aff8a77c02a44937db59c8c8a057072d9}{bind}}(\textcolor{keywordtype}{int}\ port);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_acdffcdd08c888132e95da022e0710b1d}{bind}}(\textcolor{keyword}{const}\ std::string\&\ host,\ \textcolor{keywordtype}{int}\ port);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_aef06605c6725958004116983f1a2051f}{close}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_socket_af82b21921f44a5c210f8aaedc26ca1c3}{isClosed}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_socket_afae007041d3bb70fa141b79791019d2d}{sockfd\_}}\ ==\ \mbox{\hyperlink{ccsocket_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\_SOCKET}};\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}}\ \mbox{\hyperlink{class_socket_a1f3bad4217fea24f81d39f57406a0ec8}{descriptor}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_socket_afae007041d3bb70fa141b79791019d2d}{sockfd\_}};\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_socket_a417b47af24de10184192de00d9112589}{shutdownInput}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_socket_a650128aee2581e6695c6812d8afe14b5}{shutdownOutput}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00108\ \ \ \mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}}\ \mbox{\hyperlink{class_socket_aadd260f15afadf0c31fa3dcf88d0ea49}{send}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{ccsocket_8h_a3849e30868a59da338c76e51820877c1}{SOCKDATA}}*\ buf,\ \textcolor{keywordtype}{size\_t}\ len,\ \textcolor{keywordtype}{int}\ flags\ =\ 0)\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ return\ ::send(\mbox{\hyperlink{class_socket_afae007041d3bb70fa141b79791019d2d}{sockfd\_}},\ buf,\ len,\ \mbox{\hyperlink{ccsocket_8h_aca62ccba376682a3d25ca6f17a01d607}{NO\_SIGPIPE\_}}(flags));}
+\DoxyCodeLine{00110\ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}}\ \mbox{\hyperlink{class_socket_a01b463d51433a10658854446bde71c40}{receive}}(\mbox{\hyperlink{ccsocket_8h_a3849e30868a59da338c76e51820877c1}{SOCKDATA}}*\ buf,\ \textcolor{keywordtype}{size\_t}\ len,\ \textcolor{keywordtype}{int}\ flags\ =\ 0)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ return\ ::recv(\mbox{\hyperlink{class_socket_afae007041d3bb70fa141b79791019d2d}{sockfd\_}},\ buf,\ len,\ flags);}
+\DoxyCodeLine{00119\ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#if\ !defined(\_WIN32)\ \&\&\ !defined(\_WIN64)}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00124\ \ \ \mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}}\ \mbox{\hyperlink{class_socket_aef5c4ba848f475f117b89bac531ac150}{sendTo}}(\textcolor{keywordtype}{void}\ \textcolor{keyword}{const}*\ buf,\ \textcolor{keywordtype}{size\_t}\ len,\ \textcolor{keywordtype}{int}\ flags,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ccsocket_8h_a964e73b2a42e87b1e20c8ffa730952a2}{SOCKADDR}}\ \textcolor{keyword}{const}*\ to,\ socklen\_t\ addrlen)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ return\ ::sendto(\mbox{\hyperlink{class_socket_afae007041d3bb70fa141b79791019d2d}{sockfd\_}},\ buf,\ len,\ \mbox{\hyperlink{ccsocket_8h_aca62ccba376682a3d25ca6f17a01d607}{NO\_SIGPIPE\_}}(flags),\ to,\ addrlen);}
+\DoxyCodeLine{00127\ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00130\ \ \ \mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}}\ \mbox{\hyperlink{class_socket_aa19f1c03af97458c042880c6be638151}{receiveFrom}}(\textcolor{keywordtype}{void}*\ buf,\ \textcolor{keywordtype}{size\_t}\ len,\ \textcolor{keywordtype}{int}\ flags,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ccsocket_8h_a964e73b2a42e87b1e20c8ffa730952a2}{SOCKADDR}}*\ from,\ socklen\_t*\ addrlen)\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ return\ ::recvfrom(\mbox{\hyperlink{class_socket_afae007041d3bb70fa141b79791019d2d}{sockfd\_}},\ buf,\ len,\ flags,\ from,\ addrlen);}
+\DoxyCodeLine{00133\ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_a06ff0dd6837c9f51948df655fc2713cd}{setReceiveBufferSize}}(\textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00139\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_ab02b997fa7e251d596116e95c9ccaf97}{setReuseAddress}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_afc49ad6cc259a0006ca13bb22fdd7383}{setSendBufferSize}}(\textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_a41cc1caae51e3e83e16ce2c20689ed03}{setSoLinger}}(\textcolor{keywordtype}{bool},\ \textcolor{keywordtype}{int}\ linger);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00148\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_ad65a22ec40902e2c0a98c5d4ac885f99}{setSoTimeout}}(\textcolor{keywordtype}{int}\ timeout);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00151\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_a7bc0110f3bedbb18f26b05ece01553fa}{setTcpNoDelay}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00154\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_a53a0a6980058ce02034033b05f6ca389}{getReceiveBufferSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00157\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_socket_a440e7ee9303d454df0c51fe6125cd2af}{getReuseAddress}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00160\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_acb2d3979ff562c2ffd60b12a1b4c9897}{getSendBufferSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00163\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_socket_ae3545855771edf076843e2e07fa7d3cd}{getSoLinger}}(\textcolor{keywordtype}{int}\&\ linger)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00166\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_a38b17de459b22ab45db16e538b963c49}{getSoTimeout}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00169\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_socket_a2539928ed0829df5070384f907ea48f7}{getTcpNoDelay}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00174\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_socket_a11a8bb11feaafab939278a8285afa567}{ServerSocket}};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \textcolor{comment}{//\ Initializes\ a\ local\ INET4\ address,\ returns\ 0\ on\ success,\ -\/1\ otherwise.}}
+\DoxyCodeLine{00177\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_ae65efac394eb49594cbb5b2db957e056}{setLocalAddress}}(\mbox{\hyperlink{ccsocket_8h_a91d11a5e66bd1e10b0e62aadb7775c9d}{SOCKADDR\_IN}}\&\ addr,\ \textcolor{keywordtype}{int}\ port);}
+\DoxyCodeLine{00178\ \ \ \textcolor{comment}{//\ Initializes\ a\ remote\ INET4\ address,\ returns\ 0\ on\ success,\ -\/1\ otherwise.}}
+\DoxyCodeLine{00179\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_afa64e345564506760728d2b545fcbe0c}{setAddress}}(\mbox{\hyperlink{ccsocket_8h_a91d11a5e66bd1e10b0e62aadb7775c9d}{SOCKADDR\_IN}}\&\ addr,\ \textcolor{keyword}{const}\ std::string\&\ host,\ \textcolor{keywordtype}{int}\ port);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}}\ \mbox{\hyperlink{class_socket_afae007041d3bb70fa141b79791019d2d}{sockfd\_}}\{\};}
+\DoxyCodeLine{00182\ \ \ \mbox{\hyperlink{class_socket_aae1f09b930bb7118172baa0abb15543e}{Socket}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_socket_acd3cb39bc957be2f34c91b9e262e1cec}{Socket}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00183\ \ \ \mbox{\hyperlink{class_socket_acd3cb39bc957be2f34c91b9e262e1cec}{Socket}}\&\ \mbox{\hyperlink{class_socket_afcd91bc8b2b102813d22e00c1cf03a59}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_socket_acd3cb39bc957be2f34c91b9e262e1cec}{Socket}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00184\ \ \ \mbox{\hyperlink{class_socket_acd3cb39bc957be2f34c91b9e262e1cec}{Socket}}\&\ \mbox{\hyperlink{class_socket_a9167eb93bf87c7c7fb2a408c0e0e3101}{operator=}}(\mbox{\hyperlink{class_socket_acd3cb39bc957be2f34c91b9e262e1cec}{Socket}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00185\ \};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00192\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_server_socket_a2b3098589541243241ca25495155186c}{ServerSocket}}\ \{}
+\DoxyCodeLine{00193\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00195\ \ \ \mbox{\hyperlink{class_server_socket_a2b3098589541243241ca25495155186c}{ServerSocket}}();}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \mbox{\hyperlink{class_server_socket_a510674d924c2544e6b0069e39c36516b}{\string~ServerSocket}}();}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00202\ \ \ \mbox{\hyperlink{class_socket}{Socket}}*\ \mbox{\hyperlink{class_server_socket_accc3d56d42aa50a5f3c920cf0b26959b}{accept}}();}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00206\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_server_socket_ad5281fe6c005bca007a9a758bd612481}{bind}}(\textcolor{keywordtype}{int}\ port,\ \textcolor{keywordtype}{int}\ backlog\ =\ 50);}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00209\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_server_socket_a3eac6d5571bb092622d328dbda2de2cf}{close}}();}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00212\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_server_socket_aa1c00353c8f50697c8a4a8882e520286}{isClosed}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_server_socket_ac83ceafd3f8f2242c68e398901be12bd}{sockfd\_}}\ ==\ \mbox{\hyperlink{ccsocket_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\_SOCKET}};\ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00215\ \ \ \mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}}\ \mbox{\hyperlink{class_server_socket_a42fb2ded476612b5f23c46abb74db9c2}{descriptor}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_server_socket_ac83ceafd3f8f2242c68e398901be12bd}{sockfd\_}};\ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#if\ !defined(\_WIN32)\ \&\&\ !defined(\_WIN64)}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00220\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_server_socket_ab34154bc6114c638ae02f5e018121099}{setReceiveBufferSize}}(\textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00223\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_server_socket_ae60d7cc31ad535e5d3cac42e38b8ec98}{setReuseAddress}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00226\ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_server_socket_aedb9144c9c375fcb14ac47bcb9d2eb17}{setSoTimeout}}(\textcolor{keywordtype}{int}\ timeout);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00229\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_server_socket_a9e5e1ee852ba26156c757a0086b780fe}{setTcpNoDelay}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00234\ \ \ \mbox{\hyperlink{class_socket}{Socket}}*\ \mbox{\hyperlink{class_server_socket_a1e7360bc0ce72128c5439f0d245d0793}{createSocket}}(\mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}});}
+\DoxyCodeLine{00235\ \ \ \mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}}\ \mbox{\hyperlink{class_server_socket_ac83ceafd3f8f2242c68e398901be12bd}{sockfd\_}}\{\};\ \ \textcolor{comment}{//\ listening\ socket.}}
+\DoxyCodeLine{00236\ \ \ \mbox{\hyperlink{class_server_socket_a4ba3346c88fb74117c7b0d4d0e3e4005}{ServerSocket}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_server_socket_a2b3098589541243241ca25495155186c}{ServerSocket}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00237\ \ \ \mbox{\hyperlink{class_server_socket_a2b3098589541243241ca25495155186c}{ServerSocket}}\&\ \mbox{\hyperlink{class_server_socket_a491761ffc35fccab8cb348a2286928dd}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_server_socket_a2b3098589541243241ca25495155186c}{ServerSocket}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00238\ \ \ \mbox{\hyperlink{class_server_socket_a2b3098589541243241ca25495155186c}{ServerSocket}}\&\ \mbox{\hyperlink{class_server_socket_a900d8868c7f1368837fe3c2db99afd91}{operator=}}(\mbox{\hyperlink{class_server_socket_a2b3098589541243241ca25495155186c}{ServerSocket}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00239\ \};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00276\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_socket_buffer_ac5989bcaf64234947934c7106af1cf38}{SocketBuffer}}\ \{}
+\DoxyCodeLine{00277\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00283\ \ \ \mbox{\hyperlink{class_socket_buffer_ac5989bcaf64234947934c7106af1cf38}{SocketBuffer}}(\mbox{\hyperlink{class_socket}{Socket}}*,\ \textcolor{keywordtype}{size\_t}\ inputSize\ =\ 8192,\ \textcolor{keywordtype}{size\_t}\ ouputSize\ =\ 8192);}
+\DoxyCodeLine{00284\ \ \ \mbox{\hyperlink{class_socket_buffer_ac5989bcaf64234947934c7106af1cf38}{SocketBuffer}}(\mbox{\hyperlink{class_socket}{Socket}}\&,\ \textcolor{keywordtype}{size\_t}\ inputSize\ =\ 8192,\ \textcolor{keywordtype}{size\_t}\ ouputSize\ =\ 8192);}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \mbox{\hyperlink{class_socket_buffer_a0ad263e938dccba0493d1d3e98f1c574}{\string~SocketBuffer}}();}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00300\ \ \ \mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}}\ \mbox{\hyperlink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{readLine}}(std::string\&\ message);}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00309\ \ \ \mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}}\ \mbox{\hyperlink{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{writeLine}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00313\ \ \ \mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}}\ \mbox{\hyperlink{class_socket_buffer_ae8a72a818dfb3a0986dc72a2e0ca5a87}{read}}(\textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ len);}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00317\ \ \ \mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}}\ \mbox{\hyperlink{class_socket_buffer_ad5a49e3f1f44e735eb15d1896eebf7b3}{write}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ \textcolor{keywordtype}{size\_t}\ len);}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00320\ \ \ \mbox{\hyperlink{class_socket}{Socket}}*\ \mbox{\hyperlink{class_socket_buffer_ace5301cb9f4b36153759d72cfc7e7969}{socket}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_socket_buffer_a78f7f3187813c123cac254f6e914b9ae}{sock\_}};\ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00327\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_socket_buffer_aca9ca0b2defa3b9e08bbbe6abafe3f16}{setReadSeparator}}(\textcolor{keywordtype}{int}\ separ);}
+\DoxyCodeLine{00328\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_buffer_a81a0088b93fc30ebcdde8dc6841fc03d}{readSeparator}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_socket_buffer_a9103ba29f1740eb1ef20500f3d1eeb92}{insep\_}};\ \}}
+\DoxyCodeLine{00329\ \ \ \textcolor{comment}{//\ @\}}}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00336\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_socket_buffer_a165d87f2460de769fb09d84a46a793a4}{setWriteSeparator}}(\textcolor{keywordtype}{int}\ separ);}
+\DoxyCodeLine{00337\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_buffer_a8ec7db971ba2a8b11c37b55a56f77c25}{writeSeparator}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_socket_buffer_a2ce505eb4c7d94f92d910e695b327d40}{outsep\_}};\ \}}
+\DoxyCodeLine{00338\ \ \ \textcolor{comment}{//\ @\}}}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00341\ \ \ \mbox{\hyperlink{class_socket_buffer_aa88689ce663aa53a0907834e149a55fb}{SocketBuffer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_socket_buffer_ac5989bcaf64234947934c7106af1cf38}{SocketBuffer}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00342\ \ \ \mbox{\hyperlink{class_socket_buffer_ac5989bcaf64234947934c7106af1cf38}{SocketBuffer}}\&\ \mbox{\hyperlink{class_socket_buffer_a72dea820c5cfe0bca83ca0344dfe9f95}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_socket_buffer_ac5989bcaf64234947934c7106af1cf38}{SocketBuffer}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00343\ \ \ \mbox{\hyperlink{class_socket_buffer_ac5989bcaf64234947934c7106af1cf38}{SocketBuffer}}\&\ \mbox{\hyperlink{class_socket_buffer_aec1a6777a4a2a49ef1c48924f0a6fa64}{operator=}}(\mbox{\hyperlink{class_socket_buffer_ac5989bcaf64234947934c7106af1cf38}{SocketBuffer}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00346\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_socket_buffer_afed3bfc9187c207578f8ffe37c811a83}{retrieveLine}}(std::string\&\ str,\ \mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}}\ received);}
+\DoxyCodeLine{00347\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_socket_buffer_a079fdc120086897d487fd5542fe57c7e}{insize\_}}\{\},\ \mbox{\hyperlink{class_socket_buffer_a2e6112608ced0e269808fe454fa2ff81}{outsize\_}}\{\};}
+\DoxyCodeLine{00348\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_socket_buffer_a9103ba29f1740eb1ef20500f3d1eeb92}{insep\_}}\{\},\ \mbox{\hyperlink{class_socket_buffer_a2ce505eb4c7d94f92d910e695b327d40}{outsep\_}}\{\};}
+\DoxyCodeLine{00349\ \ \ \mbox{\hyperlink{class_socket}{Socket}}*\ \mbox{\hyperlink{class_socket_buffer_a78f7f3187813c123cac254f6e914b9ae}{sock\_}}\{\};}
+\DoxyCodeLine{00350\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_input_buffer}{InputBuffer}}*\ \mbox{\hyperlink{class_socket_buffer_a78504f4a49e11250977fab9fb56f387f}{in\_}}\{\};}
+\DoxyCodeLine{00351\ \};}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

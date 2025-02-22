@@ -1,0 +1,117 @@
+\doxysection{group Class Reference}
+\hypertarget{classgroup}{}\label{classgroup}\index{group@{group}}
+
+
+A class representing a group of multimedia objects.  
+
+
+
+
+{\ttfamily \#include $<$group.\+h$>$}
+
+Inheritance diagram for group\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgroup}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgroup_a9999d4191dcfe2c0fe89c635372e4d84}{group}} (const std\+::string \&\mbox{\hyperlink{classgroup_ac334ea48bc833b0a6cb1800a08d858b0}{name}})
+\begin{DoxyCompactList}\small\item\em Constructor for the group class. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classgroup_a00b8262b2168b2599d52017dc5285016}{get\+\_\+name}} () const
+\begin{DoxyCompactList}\small\item\em Get the name of the group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgroup_a76f01cc4b86b9697a39cc0e3f0884af4}{display}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Display information about the group and its multimedia objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgroup_a1004fae3de56db559882f3e77623f844}{\texorpdfstring{$\sim$}{\string~}group}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the group class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classgroup_ac334ea48bc833b0a6cb1800a08d858b0}{name}}
+\begin{DoxyCompactList}\small\item\em The name of the group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a group of multimedia objects. 
+
+This class is derived from {\ttfamily std\+::list\texorpdfstring{$<$}{<}std\+::shared\+\_\+ptr\texorpdfstring{$<$}{<}multimedia\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}} and manages a collection of multimedia objects. It uses smart pointers ({\ttfamily std\+::shared\+\_\+ptr}) to avoid ownership issues, as multimedia objects may belong to multiple groups. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classgroup_a9999d4191dcfe2c0fe89c635372e4d84}\index{group@{group}!group@{group}}
+\index{group@{group}!group@{group}}
+\doxysubsubsection{\texorpdfstring{group()}{group()}}
+{\footnotesize\ttfamily \label{classgroup_a9999d4191dcfe2c0fe89c635372e4d84} 
+group\+::group (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the group class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the group. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classgroup_a1004fae3de56db559882f3e77623f844}\index{group@{group}!````~group@{\texorpdfstring{$\sim$}{\string~}group}}
+\index{````~group@{\texorpdfstring{$\sim$}{\string~}group}!group@{group}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}group()}{\string~group()}}
+{\footnotesize\ttfamily \label{classgroup_a1004fae3de56db559882f3e77623f844} 
+group\+::\texorpdfstring{$\sim$}{\string~}group (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for the group class. 
+
+The destructor is defaulted since the smart pointers ({\ttfamily std\+::shared\+\_\+ptr}) automatically manage memory. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgroup_a76f01cc4b86b9697a39cc0e3f0884af4}\index{group@{group}!display@{display}}
+\index{display@{display}!group@{group}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily \label{classgroup_a76f01cc4b86b9697a39cc0e3f0884af4} 
+void group\+::display (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Display information about the group and its multimedia objects. 
+
+This method outputs the group\textquotesingle{}s name, the number of multimedia objects it contains, and detailed information about each multimedia object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream to which the information is written. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classgroup_a00b8262b2168b2599d52017dc5285016}\index{group@{group}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!group@{group}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily \label{classgroup_a00b8262b2168b2599d52017dc5285016} 
+std\+::string group\+::get\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the name of the group. 
+
+\begin{DoxyReturn}{Returns}
+The name of the group as a {\ttfamily std\+::string}. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classgroup_ac334ea48bc833b0a6cb1800a08d858b0}\index{group@{group}!name@{name}}
+\index{name@{name}!group@{group}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{classgroup_ac334ea48bc833b0a6cb1800a08d858b0} 
+std\+::string group\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The name of the group. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cpp/\mbox{\hyperlink{group_8h}{group.\+h}}\end{DoxyCompactItemize}

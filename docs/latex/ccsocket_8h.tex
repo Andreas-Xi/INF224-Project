@@ -1,0 +1,81 @@
+\doxysection{cpp/ccsocket.h File Reference}
+\hypertarget{ccsocket_8h}{}\label{ccsocket_8h}\index{cpp/ccsocket.h@{cpp/ccsocket.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_socket}{Socket}}
+\item 
+class \mbox{\hyperlink{class_server_socket}{Server\+Socket}}
+\item 
+class \mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}{SOCKET}}~int
+\item 
+\#define \mbox{\hyperlink{ccsocket_8h_a964e73b2a42e87b1e20c8ffa730952a2}{SOCKADDR}}~struct sockaddr
+\item 
+\#define \mbox{\hyperlink{ccsocket_8h_a91d11a5e66bd1e10b0e62aadb7775c9d}{SOCKADDR\+\_\+\+IN}}~struct sockaddr\+\_\+in
+\item 
+\#define \mbox{\hyperlink{ccsocket_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\+\_\+\+SOCKET}}~-\/1
+\item 
+\#define \mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}}~ssize\+\_\+t
+\item 
+\#define \mbox{\hyperlink{ccsocket_8h_a3849e30868a59da338c76e51820877c1}{SOCKDATA}}~void
+\item 
+\#define \mbox{\hyperlink{ccsocket_8h_aca62ccba376682a3d25ca6f17a01d607}{NO\+\_\+\+SIGPIPE\+\_\+}}(flags)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{ccsocket_8h_a26769957ec1a2beaf223f33b66ee64ab}\index{ccsocket.h@{ccsocket.h}!INVALID\_SOCKET@{INVALID\_SOCKET}}
+\index{INVALID\_SOCKET@{INVALID\_SOCKET}!ccsocket.h@{ccsocket.h}}
+\doxysubsubsection{\texorpdfstring{INVALID\_SOCKET}{INVALID\_SOCKET}}
+{\footnotesize\ttfamily \label{ccsocket_8h_a26769957ec1a2beaf223f33b66ee64ab} 
+\#define INVALID\+\_\+\+SOCKET~-\/1}
+
+\Hypertarget{ccsocket_8h_aca62ccba376682a3d25ca6f17a01d607}\index{ccsocket.h@{ccsocket.h}!NO\_SIGPIPE\_@{NO\_SIGPIPE\_}}
+\index{NO\_SIGPIPE\_@{NO\_SIGPIPE\_}!ccsocket.h@{ccsocket.h}}
+\doxysubsubsection{\texorpdfstring{NO\_SIGPIPE\_}{NO\_SIGPIPE\_}}
+{\footnotesize\ttfamily \label{ccsocket_8h_aca62ccba376682a3d25ca6f17a01d607} 
+\#define NO\+\_\+\+SIGPIPE\+\_\+(\begin{DoxyParamCaption}\item[{}]{flags}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(flags)}
+
+\end{DoxyCode}
+\Hypertarget{ccsocket_8h_a964e73b2a42e87b1e20c8ffa730952a2}\index{ccsocket.h@{ccsocket.h}!SOCKADDR@{SOCKADDR}}
+\index{SOCKADDR@{SOCKADDR}!ccsocket.h@{ccsocket.h}}
+\doxysubsubsection{\texorpdfstring{SOCKADDR}{SOCKADDR}}
+{\footnotesize\ttfamily \label{ccsocket_8h_a964e73b2a42e87b1e20c8ffa730952a2} 
+\#define SOCKADDR~struct sockaddr}
+
+\Hypertarget{ccsocket_8h_a91d11a5e66bd1e10b0e62aadb7775c9d}\index{ccsocket.h@{ccsocket.h}!SOCKADDR\_IN@{SOCKADDR\_IN}}
+\index{SOCKADDR\_IN@{SOCKADDR\_IN}!ccsocket.h@{ccsocket.h}}
+\doxysubsubsection{\texorpdfstring{SOCKADDR\_IN}{SOCKADDR\_IN}}
+{\footnotesize\ttfamily \label{ccsocket_8h_a91d11a5e66bd1e10b0e62aadb7775c9d} 
+\#define SOCKADDR\+\_\+\+IN~struct sockaddr\+\_\+in}
+
+\Hypertarget{ccsocket_8h_a3849e30868a59da338c76e51820877c1}\index{ccsocket.h@{ccsocket.h}!SOCKDATA@{SOCKDATA}}
+\index{SOCKDATA@{SOCKDATA}!ccsocket.h@{ccsocket.h}}
+\doxysubsubsection{\texorpdfstring{SOCKDATA}{SOCKDATA}}
+{\footnotesize\ttfamily \label{ccsocket_8h_a3849e30868a59da338c76e51820877c1} 
+\#define SOCKDATA~void}
+
+\Hypertarget{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4}\index{ccsocket.h@{ccsocket.h}!SOCKET@{SOCKET}}
+\index{SOCKET@{SOCKET}!ccsocket.h@{ccsocket.h}}
+\doxysubsubsection{\texorpdfstring{SOCKET}{SOCKET}}
+{\footnotesize\ttfamily \label{ccsocket_8h_aff55fe551a9992a54ec54621c524d0a4} 
+\#define SOCKET~int}
+
+\Hypertarget{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}\index{ccsocket.h@{ccsocket.h}!SOCKSIZE@{SOCKSIZE}}
+\index{SOCKSIZE@{SOCKSIZE}!ccsocket.h@{ccsocket.h}}
+\doxysubsubsection{\texorpdfstring{SOCKSIZE}{SOCKSIZE}}
+{\footnotesize\ttfamily \label{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566} 
+\#define SOCKSIZE~ssize\+\_\+t}
+

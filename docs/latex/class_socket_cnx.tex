@@ -1,0 +1,86 @@
+\doxysection{Socket\+Cnx Class Reference}
+\hypertarget{class_socket_cnx}{}\label{class_socket_cnx}\index{SocketCnx@{SocketCnx}}
+
+
+Connection with a given client. Each \doxylink{class_socket_cnx}{Socket\+Cnx} uses a different thread.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket_cnx_acd004e809a99928860ffa94cbde99ae1}{Socket\+Cnx}} (\mbox{\hyperlink{class_t_c_p_server}{TCPServer}} \&, \mbox{\hyperlink{class_socket}{Socket}} \texorpdfstring{$\ast$}{*})
+\item 
+\mbox{\hyperlink{class_socket_cnx_aacd070cab0e3cf19cdaa4ec180b3b64c}{\texorpdfstring{$\sim$}{\string~}\+Socket\+Cnx}} ()
+\item 
+void \mbox{\hyperlink{class_socket_cnx_aa2ad22fb4fe4b78b3a9337e09475f10e}{process\+Requests}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_t_c_p_server}{TCPServer}} \& \mbox{\hyperlink{class_socket_cnx_ad46b42915ee50072a0307f0116403587}{server\+\_\+}}
+\item 
+\mbox{\hyperlink{class_socket}{Socket}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_socket_cnx_a51d23b906608701ef811a7d73f0de43e}{sock\+\_\+}}
+\item 
+\mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_socket_cnx_af5f1e7aef17b14deb89f65d8c89eb619}{sockbuf\+\_\+}}
+\item 
+std\+::thread \mbox{\hyperlink{class_socket_cnx_a0b358d64acd070e4f54123bd7a011183}{thread\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Connection with a given client. Each \doxylink{class_socket_cnx}{Socket\+Cnx} uses a different thread. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_socket_cnx_acd004e809a99928860ffa94cbde99ae1}\index{SocketCnx@{SocketCnx}!SocketCnx@{SocketCnx}}
+\index{SocketCnx@{SocketCnx}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{SocketCnx()}{SocketCnx()}}
+{\footnotesize\ttfamily \label{class_socket_cnx_acd004e809a99928860ffa94cbde99ae1} 
+Socket\+Cnx\+::\+Socket\+Cnx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_t_c_p_server}{TCPServer}} \&}]{server}{, }\item[{\mbox{\hyperlink{class_socket}{Socket}} \texorpdfstring{$\ast$}{*}}]{socket}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_socket_cnx_aacd070cab0e3cf19cdaa4ec180b3b64c}\index{SocketCnx@{SocketCnx}!````~SocketCnx@{\texorpdfstring{$\sim$}{\string~}SocketCnx}}
+\index{````~SocketCnx@{\texorpdfstring{$\sim$}{\string~}SocketCnx}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SocketCnx()}{\string~SocketCnx()}}
+{\footnotesize\ttfamily \label{class_socket_cnx_aacd070cab0e3cf19cdaa4ec180b3b64c} 
+Socket\+Cnx\+::\texorpdfstring{$\sim$}{\string~}\+Socket\+Cnx (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_socket_cnx_aa2ad22fb4fe4b78b3a9337e09475f10e}\index{SocketCnx@{SocketCnx}!processRequests@{processRequests}}
+\index{processRequests@{processRequests}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{processRequests()}{processRequests()}}
+{\footnotesize\ttfamily \label{class_socket_cnx_aa2ad22fb4fe4b78b3a9337e09475f10e} 
+void Socket\+Cnx\+::process\+Requests (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_socket_cnx_ad46b42915ee50072a0307f0116403587}\index{SocketCnx@{SocketCnx}!server\_@{server\_}}
+\index{server\_@{server\_}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{server\_}{server\_}}
+{\footnotesize\ttfamily \label{class_socket_cnx_ad46b42915ee50072a0307f0116403587} 
+\mbox{\hyperlink{class_t_c_p_server}{TCPServer}}\& Socket\+Cnx\+::server\+\_\+}
+
+\Hypertarget{class_socket_cnx_a51d23b906608701ef811a7d73f0de43e}\index{SocketCnx@{SocketCnx}!sock\_@{sock\_}}
+\index{sock\_@{sock\_}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{sock\_}{sock\_}}
+{\footnotesize\ttfamily \label{class_socket_cnx_a51d23b906608701ef811a7d73f0de43e} 
+\mbox{\hyperlink{class_socket}{Socket}}\texorpdfstring{$\ast$}{*} Socket\+Cnx\+::sock\+\_\+}
+
+\Hypertarget{class_socket_cnx_af5f1e7aef17b14deb89f65d8c89eb619}\index{SocketCnx@{SocketCnx}!sockbuf\_@{sockbuf\_}}
+\index{sockbuf\_@{sockbuf\_}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{sockbuf\_}{sockbuf\_}}
+{\footnotesize\ttfamily \label{class_socket_cnx_af5f1e7aef17b14deb89f65d8c89eb619} 
+\mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}}\texorpdfstring{$\ast$}{*} Socket\+Cnx\+::sockbuf\+\_\+}
+
+\Hypertarget{class_socket_cnx_a0b358d64acd070e4f54123bd7a011183}\index{SocketCnx@{SocketCnx}!thread\_@{thread\_}}
+\index{thread\_@{thread\_}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{thread\_}{thread\_}}
+{\footnotesize\ttfamily \label{class_socket_cnx_a0b358d64acd070e4f54123bd7a011183} 
+std\+::thread Socket\+Cnx\+::thread\+\_\+}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cpp/\mbox{\hyperlink{tcpserver_8cpp}{tcpserver.\+cpp}}\end{DoxyCompactItemize}

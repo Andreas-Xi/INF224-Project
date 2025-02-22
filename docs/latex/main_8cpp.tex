@@ -1,0 +1,96 @@
+\doxysection{cpp/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{cpp/main.cpp@{cpp/main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}multimedia.\+h"{}}\newline
+{\ttfamily \#include "{}photo.\+h"{}}\newline
+{\ttfamily \#include "{}video.\+h"{}}\newline
+{\ttfamily \#include "{}film.\+h"{}}\newline
+{\ttfamily \#include "{}group.\+h"{}}\newline
+{\ttfamily \#include "{}manager.\+h"{}}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include "{}tcpserver.\+h"{}}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{main_8cpp_a9e0992eae3950adccaf4847fbff4231d}{command}} \{ \mbox{\hyperlink{main_8cpp_a9e0992eae3950adccaf4847fbff4231dadd7770619d252a3e8aadf3b86b3e5633}{play}}
+, \mbox{\hyperlink{main_8cpp_a9e0992eae3950adccaf4847fbff4231daacef21231ac521028c073864717b6e73}{search\+\_\+obj}}
+, \mbox{\hyperlink{main_8cpp_a9e0992eae3950adccaf4847fbff4231da688aca9fae11c96777b3d4f9bd3a0150}{search\+\_\+grp}}
+, \mbox{\hyperlink{main_8cpp_a9e0992eae3950adccaf4847fbff4231da24e4fa36a452122e52097802f8799aa0}{no\+\_\+such\+\_\+command}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{main_8cpp_a9e0992eae3950adccaf4847fbff4231d}{command}} \mbox{\hyperlink{main_8cpp_acba46e85501ae87290b76cefd8ff9932}{get\+\_\+command}} (const std\+::string \&cmd)
+\begin{DoxyCompactList}\small\item\em get and proces the command input by users, return the legal command or error signal \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{main_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}} = 3331
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{main_8cpp_a9e0992eae3950adccaf4847fbff4231d}\index{main.cpp@{main.cpp}!command@{command}}
+\index{command@{command}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{command}{command}}
+{\footnotesize\ttfamily \label{main_8cpp_a9e0992eae3950adccaf4847fbff4231d} 
+enum \mbox{\hyperlink{main_8cpp_a9e0992eae3950adccaf4847fbff4231d}{command}}}
+
+Enumeration of available commands \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{play@{play}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!play@{play}}}\Hypertarget{main_8cpp_a9e0992eae3950adccaf4847fbff4231dadd7770619d252a3e8aadf3b86b3e5633}\label{main_8cpp_a9e0992eae3950adccaf4847fbff4231dadd7770619d252a3e8aadf3b86b3e5633} 
+play&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{search\_obj@{search\_obj}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!search\_obj@{search\_obj}}}\Hypertarget{main_8cpp_a9e0992eae3950adccaf4847fbff4231daacef21231ac521028c073864717b6e73}\label{main_8cpp_a9e0992eae3950adccaf4847fbff4231daacef21231ac521028c073864717b6e73} 
+search\+\_\+obj&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{search\_grp@{search\_grp}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!search\_grp@{search\_grp}}}\Hypertarget{main_8cpp_a9e0992eae3950adccaf4847fbff4231da688aca9fae11c96777b3d4f9bd3a0150}\label{main_8cpp_a9e0992eae3950adccaf4847fbff4231da688aca9fae11c96777b3d4f9bd3a0150} 
+search\+\_\+grp&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{no\_such\_command@{no\_such\_command}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!no\_such\_command@{no\_such\_command}}}\Hypertarget{main_8cpp_a9e0992eae3950adccaf4847fbff4231da24e4fa36a452122e52097802f8799aa0}\label{main_8cpp_a9e0992eae3950adccaf4847fbff4231da24e4fa36a452122e52097802f8799aa0} 
+no\+\_\+such\+\_\+command&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_acba46e85501ae87290b76cefd8ff9932}\index{main.cpp@{main.cpp}!get\_command@{get\_command}}
+\index{get\_command@{get\_command}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_command()}{get\_command()}}
+{\footnotesize\ttfamily \label{main_8cpp_acba46e85501ae87290b76cefd8ff9932} 
+\mbox{\hyperlink{main_8cpp_a9e0992eae3950adccaf4847fbff4231d}{command}} get\+\_\+command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{cmd}{}\end{DoxyParamCaption})}
+
+
+
+get and proces the command input by users, return the legal command or error signal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & input command by users \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+processed command 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_ac0f2228420376f4db7e1274f2b41667c}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ac0f2228420376f4db7e1274f2b41667c} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8cpp_a11717c934f77ad5167dac5d28562d85a}\index{main.cpp@{main.cpp}!PORT@{PORT}}
+\index{PORT@{PORT}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{PORT}{PORT}}
+{\footnotesize\ttfamily \label{main_8cpp_a11717c934f77ad5167dac5d28562d85a} 
+const int PORT = 3331}
+

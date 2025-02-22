@@ -1,0 +1,36 @@
+\doxysection{group.\+h}
+\hypertarget{group_8h_source}{}\label{group_8h_source}\index{cpp/group.h@{cpp/group.h}}
+\mbox{\hyperlink{group_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GROUP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GROUP\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{multimedia_8h}{multimedia.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgroup_a9999d4191dcfe2c0fe89c635372e4d84}{group}}:\ \textcolor{keyword}{public}\ std::list<std::shared\_ptr<multimedia>>\ \{\ \ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:\ }
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{classgroup_ac334ea48bc833b0a6cb1800a08d858b0}{name}};\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classgroup_a9999d4191dcfe2c0fe89c635372e4d84}{group}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classgroup_ac334ea48bc833b0a6cb1800a08d858b0}{name}}):\ \mbox{\hyperlink{classgroup_ac334ea48bc833b0a6cb1800a08d858b0}{name}}(\mbox{\hyperlink{classgroup_ac334ea48bc833b0a6cb1800a08d858b0}{name}})\ \{\}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ \mbox{\hyperlink{classgroup_a00b8262b2168b2599d52017dc5285016}{get\_name}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classgroup_ac334ea48bc833b0a6cb1800a08d858b0}{name}};\}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgroup_a76f01cc4b86b9697a39cc0e3f0884af4}{display}}(std::ostream\&\ os)\textcolor{keyword}{\ const\ }\{\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Group:\ "{}}\ <<\ \mbox{\hyperlink{classgroup_ac334ea48bc833b0a6cb1800a08d858b0}{name}}\ <<\ \textcolor{stringliteral}{"{}\ has\ "{}}\ <<\ this-\/>size()\ <<\ \textcolor{stringliteral}{"{}\ objects."{}}\ <<\ std::endl;\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ obj:\ *\textcolor{keyword}{this})\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj)\ obj\ -\/>\ \mbox{\hyperlink{classgroup_a76f01cc4b86b9697a39cc0e3f0884af4}{display}}(os);\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ os\ <<\ std::endl;\ }
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classgroup_a1004fae3de56db559882f3e77623f844}{\string~group}}()\ \{\}}
+\DoxyCodeLine{00058\ \};\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

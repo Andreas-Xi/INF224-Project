@@ -1,0 +1,128 @@
+\doxysection{manager.\+h}
+\hypertarget{manager_8h_source}{}\label{manager_8h_source}\index{cpp/manager.h@{cpp/manager.h}}
+\mbox{\hyperlink{manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{photo_8h}{photo.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{video_8h}{video.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{film_8h}{film.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{group_8h}{group.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmanager_a093eda9ed1674574e6e4902e21c7232a}{manager}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:\ }
+\DoxyCodeLine{00022\ \ \ \ \ std::map<std::string,\ std::shared\_ptr<multimedia>>\ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}};\ \ }
+\DoxyCodeLine{00023\ \ \ \ \ std::map<std::string,\ std::shared\_ptr<group>>\ \mbox{\hyperlink{classmanager_a5041332bc08766b0bc919ecab59fe5ab}{group\_map}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classmanager_a093eda9ed1674574e6e4902e21c7232a}{manager}}()\ =\ \textcolor{keywordflow}{default};\ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classmanager_a32a7f008f03e15bdf344f846333d965e}{\string~manager}}()\ =\ \textcolor{keywordflow}{default};\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00038\ \ \ \ \ std::shared\_ptr<photo>\ \mbox{\hyperlink{classmanager_a6be809159943524fc3fe56c07e5b61bd}{create\_photo}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude)\{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ p\ =\ std::make\_shared<photo>(name,\ filename,\ latitude,\ longitude);\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}}[name]\ =\ p;\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p;\ }
+\DoxyCodeLine{00042\ \ \ \ \ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00052\ \ \ \ \ std::shared\_ptr<video>\ \mbox{\hyperlink{classmanager_aa97ac18b1c62412594eb5785ec4daf6f}{create\_video}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keywordtype}{int}\ duration)\{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ p\ =\ std::make\_shared<video>(name,\ filename,\ duration);\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}}[name]\ =\ p;\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p;\ }
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00068\ \ \ \ \ std::shared\_ptr<film>\ \mbox{\hyperlink{classmanager_a16aa68a1fc7ead151e5f7d7c850fd299}{create\_film}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keywordtype}{int}\ duration,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*\ chapters,\ \textcolor{keywordtype}{int}\ num\_chapters)\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ p\ =\ std::make\_shared<film>(name,\ filename,\ duration,\ chapters,\ num\_chapters);\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}}[name]\ =\ p;\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p;\ }
+\DoxyCodeLine{00072\ \ \ \ \ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00080\ \ \ \ \ std::shared\_ptr<group>\ \mbox{\hyperlink{classmanager_a165754cec5d142dd70f6bb9d925a9da2}{create\_group}}(\textcolor{keyword}{const}\ std::string\&\ name)\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ p\ =\ std::make\_shared<group>(name);\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmanager_a5041332bc08766b0bc919ecab59fe5ab}{group\_map}}[name]\ =\ p;\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p;\ }
+\DoxyCodeLine{00084\ \ \ \ \ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmanager_a40d7b13afd22fe7bf02917e261f75177}{find\_multimedia}}(\textcolor{keyword}{const}\ std::string\&\ name)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}}.find(name);\ \ \textcolor{comment}{//\ use\ the\ iterator\ to\ find\ the\ key\ we\ want\ }}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ the\ key\ has\ not\ been\ found\ in\ the\ dict,\ the\ return\ value\ of\ the\ iterator\ would\ be\ pointed\ to\ the\ end}}
+\DoxyCodeLine{00095\ \textcolor{comment}{\ \ \ \ \ \ \ \ it\ -\/>\ second\ denotes\ that\ we\ want\ to\ access\ the\ **value**\ of\ the\ map}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}}.end())\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ it\ -\/>\ second\ -\/>\ display(std::cout);\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ std::cout\ <<\ \textcolor{stringliteral}{"{}Multimedia\ object\ "{}}\ <<\ name\ <<\ \textcolor{stringliteral}{"{}\ not\ found"{}}\ <<\ std::endl;\ }
+\DoxyCodeLine{00101\ \ \ \ \ \};\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmanager_a9af7e303dd852cf8131cc9de51181caa}{find\_group}}(\textcolor{keyword}{const}\ std::string\&\ name)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{classmanager_a5041332bc08766b0bc919ecab59fe5ab}{group\_map}}.find(name);\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{classmanager_a5041332bc08766b0bc919ecab59fe5ab}{group\_map}}.end())\{\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ it\ -\/>\ second\ -\/>\ display(std::cout);\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ std::cout\ <<\ \textcolor{stringliteral}{"{}Group\ object\ "{}}\ <<\ name\ <<\ \textcolor{stringliteral}{"{}\ not\ found"{}}\ <<\ std::endl;\ }
+\DoxyCodeLine{00114\ \ \ \ \ \};\ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmanager_ad182c56be6f4f518c01ebd58a0ab639d}{play\_multimedia}}(\textcolor{keyword}{const}\ std::string\&\ name)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}}.find(name);\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}}.end())\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ it\ -\/>\ second\ -\/>\ \mbox{\hyperlink{main_8cpp_a9e0992eae3950adccaf4847fbff4231dadd7770619d252a3e8aadf3b86b3e5633}{play}}();\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ std::cout\ <<\ \textcolor{stringliteral}{"{}Multimedia\ object\ "{}}\ <<\ name\ <<\ \textcolor{stringliteral}{"{}\ not\ found"{}}\ <<\ std::endl;\ }
+\DoxyCodeLine{00127\ \ \ \ \ \};\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmanager_ab268a408c4fa701fb7ce3ba1a12eb86c}{remove\_multimedia}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}}.find(name);\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}}.end())\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00138\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ std::list<T>\ l:\ l.remove(T\ name)\ delete\ all\ the\ object\ named\ name}}
+\DoxyCodeLine{00139\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ auto\ it\ =\ l.begin();\ l.erase(it);\ delete\ an\ object\ by\ an\ iterator}}
+\DoxyCodeLine{00140\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ remove\ the\ object\ from\ the\ group\ }}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classgroup}{group}}:\ \mbox{\hyperlink{classmanager_a5041332bc08766b0bc919ecab59fe5ab}{group\_map}})\{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgroup}{group}}.second\ -\/>\ remove(it\ -\/>\ second);\ \ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ remove\ the\ object\ from\ the\ multimedia\ list\ }}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}}.erase(it);\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ std::cout\ <<\ \textcolor{stringliteral}{"{}Multimedia\ object\ "{}}\ <<\ name\ <<\ \textcolor{stringliteral}{"{}\ not\ found"{}}\ <<\ std::endl;\ }
+\DoxyCodeLine{00149\ \ \ \ \ \};\ }
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmanager_ac6ca4331c35fb2927ce0c2f19cd80a8b}{remove\_group}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{classmanager_a5041332bc08766b0bc919ecab59fe5ab}{group\_map}}.find(name);\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{classmanager_a5041332bc08766b0bc919ecab59fe5ab}{group\_map}}.end())\{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmanager_a5041332bc08766b0bc919ecab59fe5ab}{group\_map}}.erase(it);\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ std::cout\ <<\ \textcolor{stringliteral}{"{}Group\ object\ "{}}\ <<\ name\ <<\ \textcolor{stringliteral}{"{}\ not\ found"{}}\ <<\ std::endl;\ }
+\DoxyCodeLine{00162\ \ \ \ \ \};\ }
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmanager_afe9d52feb73c453190bf666718123bf6}{display\_multimedia}}(\textcolor{keyword}{const}\ std::string\&\ name,\ std::ostream\ \&os)\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}}.find(name);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(it\ !=\ \mbox{\hyperlink{classmanager_aa9a381ad88c69f2a195b33fdc76ed5e4}{multimedia\_map}}.end())\ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ it\ -\/>\ second\ -\/>\ display(os);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Multimedia\ "{}}\ <<\ name\ <<\ \textcolor{stringliteral}{"{}\ not\ found\ "{}}<<\ std::endl;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmanager_aa8b5b7831abebfc36f790a8cb884eaf8}{display\_group}}(\textcolor{keyword}{const}\ std::string\&\ name,\ std::ostream\ \&os)\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{classmanager_a5041332bc08766b0bc919ecab59fe5ab}{group\_map}}.find(name);\ }
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(it\ !=\ \mbox{\hyperlink{classmanager_a5041332bc08766b0bc919ecab59fe5ab}{group\_map}}.end())\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ it\ -\/>\ second\ -\/>\ display(os);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Group\ Multimedia\ "{}}\ <<\ name\ <<\ \textcolor{stringliteral}{"{}\ not\ found\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \};\ }
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

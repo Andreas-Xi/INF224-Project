@@ -1,0 +1,284 @@
+\doxysection{Socket\+Buffer Class Reference}
+\hypertarget{class_socket_buffer}{}\label{class_socket_buffer}\index{SocketBuffer@{SocketBuffer}}
+
+
+{\ttfamily \#include $<$ccsocket.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket_buffer_a0ad263e938dccba0493d1d3e98f1c574}{\texorpdfstring{$\sim$}{\string~}\+Socket\+Buffer}} ()
+\item 
+\mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}} \mbox{\hyperlink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line}} (std\+::string \&message)
+\item 
+\mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}} \mbox{\hyperlink{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{write\+Line}} (const std\+::string \&message)
+\item 
+\mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}} \mbox{\hyperlink{class_socket_buffer_ae8a72a818dfb3a0986dc72a2e0ca5a87}{read}} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t len)
+\item 
+\mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}} \mbox{\hyperlink{class_socket_buffer_ad5a49e3f1f44e735eb15d1896eebf7b3}{write}} (const char \texorpdfstring{$\ast$}{*}str, size\+\_\+t len)
+\item 
+\mbox{\hyperlink{class_socket}{Socket}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_socket_buffer_ace5301cb9f4b36153759d72cfc7e7969}{socket}} ()
+\begin{DoxyCompactList}\small\item\em Returns the associated socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket_buffer_ac5989bcaf64234947934c7106af1cf38}{Socket\+Buffer}} (\mbox{\hyperlink{class_socket}{Socket}} \texorpdfstring{$\ast$}{*}, size\+\_\+t input\+Size=8192, size\+\_\+t ouput\+Size=8192)
+\item 
+\mbox{\hyperlink{class_socket_buffer_a739a80a7bb5d2603d8d0d9a88293bad8}{Socket\+Buffer}} (\mbox{\hyperlink{class_socket}{Socket}} \&, size\+\_\+t input\+Size=8192, size\+\_\+t ouput\+Size=8192)
+\end{DoxyCompactItemize}
+
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_socket_buffer_a079fdc120086897d487fd5542fe57c7e}{insize\+\_\+}} \{\}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_socket_buffer_a2e6112608ced0e269808fe454fa2ff81}{outsize\+\_\+}} \{\}
+\item 
+int \mbox{\hyperlink{class_socket_buffer_a9103ba29f1740eb1ef20500f3d1eeb92}{insep\+\_\+}} \{\}
+\item 
+int \mbox{\hyperlink{class_socket_buffer_a2ce505eb4c7d94f92d910e695b327d40}{outsep\+\_\+}} \{\}
+\item 
+\mbox{\hyperlink{class_socket}{Socket}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_socket_buffer_a78f7f3187813c123cac254f6e914b9ae}{sock\+\_\+}} \{\}
+\item 
+struct \mbox{\hyperlink{struct_input_buffer}{Input\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_socket_buffer_a78504f4a49e11250977fab9fb56f387f}{in\+\_\+}} \{\}
+\item 
+void \mbox{\hyperlink{class_socket_buffer_aca9ca0b2defa3b9e08bbbe6abafe3f16}{set\+Read\+Separator}} (int separ)
+\item 
+int \mbox{\hyperlink{class_socket_buffer_a81a0088b93fc30ebcdde8dc6841fc03d}{read\+Separator}} () const
+\item 
+void \mbox{\hyperlink{class_socket_buffer_a165d87f2460de769fb09d84a46a793a4}{set\+Write\+Separator}} (int separ)
+\item 
+int \mbox{\hyperlink{class_socket_buffer_a8ec7db971ba2a8b11c37b55a56f77c25}{write\+Separator}} () const
+\item 
+\mbox{\hyperlink{class_socket_buffer_aa88689ce663aa53a0907834e149a55fb}{Socket\+Buffer}} (const \mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}} \&)=delete
+\item 
+\mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}} \& \mbox{\hyperlink{class_socket_buffer_a72dea820c5cfe0bca83ca0344dfe9f95}{operator=}} (const \mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}} \&)=delete
+\item 
+\mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}} \& \mbox{\hyperlink{class_socket_buffer_aec1a6777a4a2a49ef1c48924f0a6fa64}{operator=}} (\mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}} \&\&)=delete
+\item 
+bool \mbox{\hyperlink{class_socket_buffer_afed3bfc9187c207578f8ffe37c811a83}{retrieve\+Line}} (std\+::string \&str, \mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}} received)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Preserves record boundaries when exchanging messages between connected TCP/\+IP sockets. Ensures that one call to \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()} corresponds to one and exactly one call to \doxylink{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{write\+Line()} on the other side. By default, \doxylink{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{write\+Line()} adds ~\newline
+ at the end of each message and \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()} searches for ~\newline
+, \textbackslash{}r or ~\newline
+\textbackslash{}r so that it can retreive the entire record. Beware messages should thus not contain these charecters.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{client_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ Socket\ sock;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_socket_buffer_ac5989bcaf64234947934c7106af1cf38}{SocketBuffer}}\ sockbuf(sock);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ status\ =\ sock.\mbox{\hyperlink{class_socket_a772419bd74c4fe4987d190506a64ff87}{connect}}(\textcolor{stringliteral}{"{}localhost"{}},\ 3331);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (status\ <\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Could\ not\ connect"{}}\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (cin)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordtype}{string}\ request,\ response;}
+\DoxyCodeLine{\ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Request:\ "{}};}
+\DoxyCodeLine{\ \ \ \ \ \ getline(cin,\ request);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sockbuf.writeLine(request)\ <\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Could\ not\ send\ message"{}}\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{\ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sockbuf.readLine(response)\ <\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Couldn't\ receive\ message"{}}\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 3;}
+\DoxyCodeLine{\ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_socket_buffer_ac5989bcaf64234947934c7106af1cf38}\index{SocketBuffer@{SocketBuffer}!SocketBuffer@{SocketBuffer}}
+\index{SocketBuffer@{SocketBuffer}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{SocketBuffer()}{SocketBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_socket_buffer_ac5989bcaf64234947934c7106af1cf38} 
+Socket\+Buffer\+::\+Socket\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_socket}{Socket}} \texorpdfstring{$\ast$}{*}}]{sock}{, }\item[{size\+\_\+t}]{input\+Size}{ = {\ttfamily 8192}, }\item[{size\+\_\+t}]{ouput\+Size}{ = {\ttfamily 8192}}\end{DoxyParamCaption})}
+
+Constructor. {\itshape socket} must be a connected TCP/\+IP \doxylink{class_socket}{Socket}. It should {\bfseries{not}} be deleted as long as the \doxylink{class_socket_buffer}{Socket\+Buffer} is used. {\itshape input\+Size} and {\itshape ouput\+Size} are the sizes of the buffers that are used internally for exchanging data. \Hypertarget{class_socket_buffer_a739a80a7bb5d2603d8d0d9a88293bad8}\index{SocketBuffer@{SocketBuffer}!SocketBuffer@{SocketBuffer}}
+\index{SocketBuffer@{SocketBuffer}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{SocketBuffer()}{SocketBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a739a80a7bb5d2603d8d0d9a88293bad8} 
+Socket\+Buffer\+::\+Socket\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_socket}{Socket}} \&}]{sock}{, }\item[{size\+\_\+t}]{input\+Size}{ = {\ttfamily 8192}, }\item[{size\+\_\+t}]{ouput\+Size}{ = {\ttfamily 8192}}\end{DoxyParamCaption})}
+
+\Hypertarget{class_socket_buffer_a0ad263e938dccba0493d1d3e98f1c574}\index{SocketBuffer@{SocketBuffer}!````~SocketBuffer@{\texorpdfstring{$\sim$}{\string~}SocketBuffer}}
+\index{````~SocketBuffer@{\texorpdfstring{$\sim$}{\string~}SocketBuffer}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SocketBuffer()}{\string~SocketBuffer()}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a0ad263e938dccba0493d1d3e98f1c574} 
+Socket\+Buffer\+::\texorpdfstring{$\sim$}{\string~}\+Socket\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_socket_buffer_aa88689ce663aa53a0907834e149a55fb}\index{SocketBuffer@{SocketBuffer}!SocketBuffer@{SocketBuffer}}
+\index{SocketBuffer@{SocketBuffer}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{SocketBuffer()}{SocketBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_socket_buffer_aa88689ce663aa53a0907834e149a55fb} 
+Socket\+Buffer\+::\+Socket\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_socket_buffer_a72dea820c5cfe0bca83ca0344dfe9f95}\index{SocketBuffer@{SocketBuffer}!operator=@{operator=}}
+\index{operator=@{operator=}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a72dea820c5cfe0bca83ca0344dfe9f95} 
+\mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}} \& Socket\+Buffer\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\Hypertarget{class_socket_buffer_aec1a6777a4a2a49ef1c48924f0a6fa64}\index{SocketBuffer@{SocketBuffer}!operator=@{operator=}}
+\index{operator=@{operator=}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_socket_buffer_aec1a6777a4a2a49ef1c48924f0a6fa64} 
+\mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}} \& Socket\+Buffer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_socket_buffer}{Socket\+Buffer}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\Hypertarget{class_socket_buffer_ae8a72a818dfb3a0986dc72a2e0ca5a87}\index{SocketBuffer@{SocketBuffer}!read@{read}}
+\index{read@{read}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily \label{class_socket_buffer_ae8a72a818dfb3a0986dc72a2e0ca5a87} 
+\mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}} Socket\+Buffer\+::read (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+Reads exactly {\itshape len} bytes from the socket, blocks otherwise. \begin{DoxyReturn}{Returns}
+see \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()} 
+\end{DoxyReturn}
+\Hypertarget{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}\index{SocketBuffer@{SocketBuffer}!readLine@{readLine}}
+\index{readLine@{readLine}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{readLine()}{readLine()}}
+{\footnotesize\ttfamily \label{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d} 
+\mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}} Socket\+Buffer\+::read\+Line (\begin{DoxyParamCaption}\item[{std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+Read a message from a connected socket. \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()} receives one (and only one) message sent by \doxylink{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{write\+Line()} on the other side, ie, a call to \doxylink{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{write\+Line()} corresponds to one and exactly one call to \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()} on the other side. The received data is stored in {\itshape message}. This method blocks until the message is fully received.
+
+\begin{DoxyReturn}{Returns}
+The number of bytes that were received or one of the following values\+:
+\begin{DoxyItemize}
+\item 0\+: shutdown\+Output() was called on the other side
+\item \doxylink{class_socket_a9f68308228badcdd299cd83e62e36976a86c20a6b52053a1f39f5d31b28b9e7cb}{Socket\+::\+Failed} (-\/1)\+: a connection error occured
+\item \doxylink{class_socket_a9f68308228badcdd299cd83e62e36976ae3fcc87ee9b909ea92c751f70df4c9ac}{Socket\+::\+Invalid\+Socket} (-\/2)\+: the socket is invalid. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+the separator (eg ~\newline
+) is counted in the value returned by \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()}. 
+\end{DoxyNote}
+\Hypertarget{class_socket_buffer_a81a0088b93fc30ebcdde8dc6841fc03d}\index{SocketBuffer@{SocketBuffer}!readSeparator@{readSeparator}}
+\index{readSeparator@{readSeparator}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{readSeparator()}{readSeparator()}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a81a0088b93fc30ebcdde8dc6841fc03d} 
+int Socket\+Buffer\+::read\+Separator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_socket_buffer_afed3bfc9187c207578f8ffe37c811a83}\index{SocketBuffer@{SocketBuffer}!retrieveLine@{retrieveLine}}
+\index{retrieveLine@{retrieveLine}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{retrieveLine()}{retrieveLine()}}
+{\footnotesize\ttfamily \label{class_socket_buffer_afed3bfc9187c207578f8ffe37c811a83} 
+bool Socket\+Buffer\+::retrieve\+Line (\begin{DoxyParamCaption}\item[{std\+::string \&}]{str}{, }\item[{\mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}}}]{received}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_socket_buffer_aca9ca0b2defa3b9e08bbbe6abafe3f16}\index{SocketBuffer@{SocketBuffer}!setReadSeparator@{setReadSeparator}}
+\index{setReadSeparator@{setReadSeparator}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{setReadSeparator()}{setReadSeparator()}}
+{\footnotesize\ttfamily \label{class_socket_buffer_aca9ca0b2defa3b9e08bbbe6abafe3f16} 
+void Socket\+Buffer\+::set\+Read\+Separator (\begin{DoxyParamCaption}\item[{int}]{separ}{}\end{DoxyParamCaption})}
+
+Returns/changes the separator used by \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()}. \doxylink{class_socket_buffer_aca9ca0b2defa3b9e08bbbe6abafe3f16}{set\+Read\+Separator()} changes the symbol used by \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()} to separate successive messages\+:
+\begin{DoxyItemize}
+\item if {\itshape separ} \texorpdfstring{$<$}{<} 0 (the default) \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()} searches for \textbackslash{}n, \textbackslash{}r or \textbackslash{}n\textbackslash{}r.
+\item if {\itshape separ} \texorpdfstring{$>$}{>}= 0, \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()} searches for this character to separate messages, 
+\end{DoxyItemize}\Hypertarget{class_socket_buffer_a165d87f2460de769fb09d84a46a793a4}\index{SocketBuffer@{SocketBuffer}!setWriteSeparator@{setWriteSeparator}}
+\index{setWriteSeparator@{setWriteSeparator}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{setWriteSeparator()}{setWriteSeparator()}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a165d87f2460de769fb09d84a46a793a4} 
+void Socket\+Buffer\+::set\+Write\+Separator (\begin{DoxyParamCaption}\item[{int}]{separ}{}\end{DoxyParamCaption})}
+
+Returns/changes the separator used by \doxylink{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{write\+Line()}. \doxylink{class_socket_buffer_a165d87f2460de769fb09d84a46a793a4}{set\+Write\+Separator()} changes the character(s) used by \doxylink{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{write\+Line()} to separate successive messages\+:
+\begin{DoxyItemize}
+\item if {\itshape separ} \texorpdfstring{$<$}{<} 0 (the default) \doxylink{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{write\+Line()} inserts \textbackslash{}n\textbackslash{}r between successive lines.
+\item if {\itshape separ} \texorpdfstring{$>$}{>}= 0, \doxylink{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{write\+Line()} inserts {\itshape separ} between successive lines, 
+\end{DoxyItemize}\Hypertarget{class_socket_buffer_ace5301cb9f4b36153759d72cfc7e7969}\index{SocketBuffer@{SocketBuffer}!socket@{socket}}
+\index{socket@{socket}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{socket()}{socket()}}
+{\footnotesize\ttfamily \label{class_socket_buffer_ace5301cb9f4b36153759d72cfc7e7969} 
+\mbox{\hyperlink{class_socket}{Socket}} \texorpdfstring{$\ast$}{*} Socket\+Buffer\+::socket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the associated socket. 
+
+\Hypertarget{class_socket_buffer_ad5a49e3f1f44e735eb15d1896eebf7b3}\index{SocketBuffer@{SocketBuffer}!write@{write}}
+\index{write@{write}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{class_socket_buffer_ad5a49e3f1f44e735eb15d1896eebf7b3} 
+\mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}} Socket\+Buffer\+::write (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str}{, }\item[{size\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+Writes {\itshape len} bytes to the socket. \begin{DoxyReturn}{Returns}
+see \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()} 
+\end{DoxyReturn}
+\Hypertarget{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282}\index{SocketBuffer@{SocketBuffer}!writeLine@{writeLine}}
+\index{writeLine@{writeLine}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{writeLine()}{writeLine()}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282} 
+\mbox{\hyperlink{ccsocket_8h_a8bc56bf597ba32a5c8d828c75b4c9566}{SOCKSIZE}} Socket\+Buffer\+::write\+Line (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+Send a message to a connected socket. \doxylink{class_socket_buffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{write\+Line()} sends a message that will be received by a single call of \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()} on the other side,
+
+\begin{DoxyReturn}{Returns}
+see \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()} 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+if {\itshape message} contains one or several occurences of the separator, \doxylink{class_socket_buffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{read\+Line()} will be called as many times on the other side. 
+\end{DoxyNote}
+\Hypertarget{class_socket_buffer_a8ec7db971ba2a8b11c37b55a56f77c25}\index{SocketBuffer@{SocketBuffer}!writeSeparator@{writeSeparator}}
+\index{writeSeparator@{writeSeparator}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{writeSeparator()}{writeSeparator()}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a8ec7db971ba2a8b11c37b55a56f77c25} 
+int Socket\+Buffer\+::write\+Separator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_socket_buffer_a78504f4a49e11250977fab9fb56f387f}\index{SocketBuffer@{SocketBuffer}!in\_@{in\_}}
+\index{in\_@{in\_}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{in\_}{in\_}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a78504f4a49e11250977fab9fb56f387f} 
+struct \mbox{\hyperlink{struct_input_buffer}{Input\+Buffer}}\texorpdfstring{$\ast$}{*} Socket\+Buffer\+::in\+\_\+ \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_socket_buffer_a9103ba29f1740eb1ef20500f3d1eeb92}\index{SocketBuffer@{SocketBuffer}!insep\_@{insep\_}}
+\index{insep\_@{insep\_}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{insep\_}{insep\_}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a9103ba29f1740eb1ef20500f3d1eeb92} 
+int Socket\+Buffer\+::insep\+\_\+ \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_socket_buffer_a079fdc120086897d487fd5542fe57c7e}\index{SocketBuffer@{SocketBuffer}!insize\_@{insize\_}}
+\index{insize\_@{insize\_}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{insize\_}{insize\_}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a079fdc120086897d487fd5542fe57c7e} 
+size\+\_\+t Socket\+Buffer\+::insize\+\_\+ \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_socket_buffer_a2ce505eb4c7d94f92d910e695b327d40}\index{SocketBuffer@{SocketBuffer}!outsep\_@{outsep\_}}
+\index{outsep\_@{outsep\_}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{outsep\_}{outsep\_}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a2ce505eb4c7d94f92d910e695b327d40} 
+int Socket\+Buffer\+::outsep\+\_\+ \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_socket_buffer_a2e6112608ced0e269808fe454fa2ff81}\index{SocketBuffer@{SocketBuffer}!outsize\_@{outsize\_}}
+\index{outsize\_@{outsize\_}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{outsize\_}{outsize\_}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a2e6112608ced0e269808fe454fa2ff81} 
+size\+\_\+t Socket\+Buffer\+::outsize\+\_\+ \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_socket_buffer_a78f7f3187813c123cac254f6e914b9ae}\index{SocketBuffer@{SocketBuffer}!sock\_@{sock\_}}
+\index{sock\_@{sock\_}!SocketBuffer@{SocketBuffer}}
+\doxysubsubsection{\texorpdfstring{sock\_}{sock\_}}
+{\footnotesize\ttfamily \label{class_socket_buffer_a78f7f3187813c123cac254f6e914b9ae} 
+\mbox{\hyperlink{class_socket}{Socket}}\texorpdfstring{$\ast$}{*} Socket\+Buffer\+::sock\+\_\+ \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cpp/\mbox{\hyperlink{ccsocket_8h}{ccsocket.\+h}}\item 
+cpp/\mbox{\hyperlink{ccsocket_8cpp}{ccsocket.\+cpp}}\end{DoxyCompactItemize}
