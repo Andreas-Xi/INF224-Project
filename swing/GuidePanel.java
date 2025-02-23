@@ -35,7 +35,12 @@ public class GuidePanel extends JPanel {
                 "- film_disney\n\n" + 
                 "Group in the database:\n" + 
                 "- my_group" + 
-                "\n\n\nFor ex. TODO"; 
+                "\n\n\nFor ex. \n" + 
+                "Enter **video_train** in the text area, then click: \n" + 
+                "Search Object\n" + 
+                "Enter **film_disney** in the text area, then click: \n" + 
+                "Play\n" + 
+                "Finally, click Exit to quit the program.\n"; 
         guideArea.setText(guideText);
 
         // Add guide text area to the panel

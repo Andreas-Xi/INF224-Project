@@ -14,7 +14,7 @@
 
 #include <sstream>
 #include "tcpserver.h"
-
+#include <algorithm>
 
 const int PORT = 3331;
 

@@ -1,0 +1,5 @@
+main.o: main.cpp multimedia.h photo.h video.h film.h group.h manager.h \
+  tcpserver.h ccsocket.h
+multimedia.o: multimedia.cpp multimedia.h
+ccsocket.o: ccsocket.cpp ccsocket.h
+tcpserver.o: tcpserver.cpp tcpserver.h ccsocket.h
