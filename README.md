@@ -1,5 +1,5 @@
 # Telecom Paris INF-224 Project
-
+*By Xiquan LI*
 ## Quick Start
 
 To luanch the project, first go to the cpp directory and launch the server: 
