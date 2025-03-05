@@ -1,4 +1,4 @@
-# Telecom Paris INF-224 Project
+# Telecom Paris INF224 Project
 *By Xiquan LI*
 ## Quick Start
 
